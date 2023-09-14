@@ -1,6 +1,6 @@
 #!/bin/bash
 sxhkd -c $HOME/.config/dwm-sxhkd/dwm-sxhkdrc &
-#dunst &
+dunst &
 xwallpaper --zoom ~/Pictures/Wallpapers/Pixel-Night.jpg &
 clipmenud &
 
