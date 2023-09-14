@@ -1,0 +1,17 @@
+#!/bin/bash
+
+shutdown=" Shutdown"
+reboot=" Reboot"
+
+# Variable passed to rofi
+options="$shutdown\n$reboot"
+
+chosen="$(echo -e "$options" | dmenu -i -p "Power-Menu "  )"
+case $chosen in
+    $shutdown)
+        sudo shutdown -h now
+	;;
+    $reboot)
+        sudo shutdown -r now
+        ;;
+esac

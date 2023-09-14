@@ -1,0 +1,149 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+env:
+  TERM: xterm-256color
+
+##################################
+############# WINDOWS ############
+##################################
+
+window:
+  #  columns: 0
+  #  lines: 0
+
+  #position:
+  #  x: 0
+  #  y: 0
+
+  padding:
+    x: 15
+    y: 14
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window title
+  title: Alacritty
+
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+
+##################################
+############## FONTS #############
+##################################
+
+font:
+  # Normal (roman) font face
+  normal:
+    # Font family
+    family: JetBrains Mono Nerd Font
+    style: Medium
+
+  # Bold font face
+  bold:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: JetBrains Mono Nerd Font
+    style: MediumItalic
+
+  # Bold italic font face
+  bold_italic:
+    family: JetBrains Mono Nerd Font
+    style: BoldItalic
+
+  # Point size
+  size: 12.0 #16.0
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 4
+
+
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+
+
+##################################
+############# COLORS #############
+##################################
+
+colors:
+  # Default colors
+  primary:
+    background: '#1b1e24'           
+    foreground: '#a9b1d6'
+
+  normal:
+    black: "#32344a"
+    red: "#f7768e"
+    green: "#9ece6a"
+    yellow: "#e0af68"
+    blue: "#7aa2f7"
+    magenta: "#ad8ee6"
+    cyan: "#449dab"
+    white: "#787c99"
+  bright:
+    black: "#444b6a"
+    red: "#ff7a93"
+    green: "#b9f27c"
+    yellow: "#ff9e64"
+    blue: "#7da6ff"
+    magenta: "#bb9af7"
+    cyan: "#0db9d7"
+    white: "#acb0d0"
+
+# Allow terminal applications to change Alacritty's window title.
+dynamic_title: true
+
+
+##################################
+############# CURSOR #############
+##################################
+
+cursor:
+  style: Beam
+
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 5000
+
+
+##################################
+########## KEY BINDINGS ##########
+##################################
+
+key_bindings:
+  - { key: V,         mods: Control,	   action: Paste                       }
+  - { key: C,         mods: Control,	   action: Copy                        }
+  - { key: Paste,     mods: None,          action: Paste                       }
+  - { key: Copy,      mods: None,          action: Copy                        }
+  - { key: Insert,    mods: Shift,         action: PasteSelection              }
+  - { key: Key0,      mods: Control,       action: ResetFontSize               }
+  
+  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+
+  - { key: F11,       mods: None,          action: ToggleFullscreen            }
+  - { key: L,         mods: Control,       action: ClearLogNotice              }
+  - { key: L,         mods: Control,       chars: "\x0c"                       }
+
+  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
+  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
+  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
+  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
+  - { key: Down,      mods: Shift,         action: ScrollLineDown, mode: ~Alt  }
+  - { key: Up,        mods: Shift,         action: ScrollLineUp  , mode: ~Alt  }
+

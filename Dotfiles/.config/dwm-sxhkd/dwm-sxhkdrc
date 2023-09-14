@@ -1,0 +1,64 @@
+##--------------- Dmenu Scripts --------------##
+# Dmenu App Launcher
+super + @space
+	dmenu_run
+
+# Dmenu Menus
+super + c
+	~/Others/Scripts/Dmenu/dmenu-menus
+
+# Dmenu Power-Menu
+super + x
+	~/Others/Scripts/Dmenu/dmenu-power-menu
+
+# Dmenu Clipmenu
+super + v
+	clipmenu
+
+super + period
+	~/Others/Scripts/Dmenu/dmenu-emojis
+
+##---------- Shortcut Applications ----------##
+
+# Firefox
+super + alt + 1
+	firefox
+
+# Discord
+super + alt + 2
+	discord
+
+##---------- System Applications ----------##
+
+# Bpytop
+ctrl + shift + Escape
+	st -e bpytop
+
+# Nemo
+super + e
+	nemo
+
+# Pavucontrol
+super + shift + v
+        pavucontrol
+
+#Layout Setxkbmap
+Shift_L + ctrl
+    setxkbmap -query | grep -q 'br' && setxkbmap us || setxkbmap br,us
+
+##---------- System Keys ----------##
+
+# Take a screenshot
+@Print
+	scrot ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png -e 'xclip -selection clipboard -target image/png -i $f'
+
+# Take a screenshot of area
+super + shift + s
+	scrot -s --line mode=edge ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png -e 'xclip -selection clipboard -target image/png -i $f'
+
+##---------- Sxhkd Keys ----------##
+
+# Make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
