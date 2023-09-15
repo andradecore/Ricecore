@@ -14,7 +14,7 @@ difficulty:1
 fancyGraphics:true
 ao:2
 renderClouds:false
-resourcePacks:["! §fWhite §fEsdeath §fX§0.zip"]
+resourcePacks:["§b§lSharkness"]
 incompatibleResourcePacks:[]
 lastServer:
 lang:en_us

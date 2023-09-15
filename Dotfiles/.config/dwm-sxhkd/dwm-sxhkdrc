@@ -28,6 +28,10 @@ super + alt + 1
 super + alt + 2
 	discord
 
+# Ncspot
+super + alt + 6
+	st -e ncspot
+
 ##---------- System Applications ----------##
 
 # Bpytop
