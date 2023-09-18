@@ -6,7 +6,7 @@ saturation:0.0
 renderDistance:8
 guiScale:0
 particles:0
-bobView:true
+bobView:false
 anaglyph3d:false
 maxFps:140
 fboEnable:true
@@ -106,7 +106,7 @@ key_keybind.name.EMOTE_SLOT_5:0
 key_keybind.name.EMOTE_SLOT_6:0
 key_keybind.name.EMOTE_SLOT_7:0
 key_keybind.name.EMOTE_SLOT_8:0
-soundCategory_master:0.09271523
+soundCategory_master:0.39403972
 soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0

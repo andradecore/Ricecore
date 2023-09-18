@@ -1,7 +1,7 @@
 #!/bin/bash
 sxhkd -c $HOME/.config/dwm-sxhkd/dwm-sxhkdrc &
 dunst &
-xwallpaper --zoom ~/Pictures/Wallpapers/Pixel-Night.jpg &
+#xwallpaper --zoom ~/Pictures/Wallpapers/Pixel-Night.jpg &
 clipmenud &
 
 dte(){
@@ -10,7 +10,7 @@ dte(){
 }
 
 upd(){
-	upd=`checkupdates | wc -l`
+	upd=$(xbps-install -Mun 2> /dev/null | wc -l)
 	echo -e "󱑢 $upd"
 }
 

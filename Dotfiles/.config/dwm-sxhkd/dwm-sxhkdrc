@@ -15,6 +15,7 @@ super + x
 super + v
 	clipmenu
 
+# Dmenu Emojis
 super + period
 	~/Others/Scripts/Dmenu/dmenu-emojis
 
@@ -26,7 +27,7 @@ super + alt + 1
 
 # Discord
 super + alt + 2
-	discord
+	Discord
 
 # Ncspot
 super + alt + 6

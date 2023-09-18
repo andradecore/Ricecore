@@ -73,6 +73,18 @@ alias rm='sudo rm -r'
 alias cp='cp -r'
 alias wmclass='xprop | grep WM_CLASS'
 
+# XBPS
+alias xr='sudo xbps-remove'
+alias xrr='sudo xbps-remove -R'
+alias xro='sudo xbps-remove -o'
+alias xl='sudo xbps-install -S'
+alias xs='xbps-query -Rs'
+alias xq='xbps-query'
+alias xu='sudo xbps-install -Su'
+
+# XBPS-SRC
+alias xi='sudo xbps-install --repository hostdir/binpkgs/nonfree'
+
 # PACMAN
 alias pr='sudo pacman -R'
 alias prr='sudo pacman -Rns'
@@ -114,4 +126,4 @@ export LS_COLORS
 ##################################
 ############ PIPEWIRE ############
 ##################################
-export PIPEWIRE_LATENCY=128/48000
+#export PIPEWIRE_LATENCY=128/48000
