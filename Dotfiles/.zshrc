@@ -84,6 +84,7 @@ alias xu='sudo xbps-install -Su'
 
 # XBPS-SRC
 alias xi='sudo xbps-install --repository hostdir/binpkgs/nonfree'
+alias xusrc='cd ~/Others/void-packages && git pull && ./xbps-src update-sys'
 
 # PACMAN
 alias pr='sudo pacman -R'

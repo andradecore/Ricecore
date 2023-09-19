@@ -1,7 +1,7 @@
 ##--------------- Dmenu Scripts --------------##
 # Dmenu App Launcher
 super + @space
-	dmenu_run
+	dmenu_run -i
 
 # Dmenu Menus
 super + c
