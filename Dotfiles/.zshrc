@@ -127,4 +127,4 @@ export LS_COLORS
 ##################################
 ############ PIPEWIRE ############
 ##################################
-#export PIPEWIRE_LATENCY=128/48000
+export PIPEWIRE_LATENCY=128/48000

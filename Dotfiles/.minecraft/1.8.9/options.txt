@@ -14,7 +14,7 @@ difficulty:1
 fancyGraphics:true
 ao:2
 renderClouds:false
-resourcePacks:["§b§lSharkness"]
+resourcePacks:["§l§dRam 32x [ eunsia ]"]
 incompatibleResourcePacks:[]
 lastServer:
 lang:en_us
@@ -107,6 +107,7 @@ key_keybind.name.EMOTE_SLOT_6:0
 key_keybind.name.EMOTE_SLOT_7:0
 key_keybind.name.EMOTE_SLOT_8:0
 key_Toggle Perspective:56
+key_Open TC GUI:25
 soundCategory_master:0.39403972
 soundCategory_music:0.0
 soundCategory_record:1.0
