@@ -1,6 +1,6 @@
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
-  exec startx &>/dev/null 
-fi
+#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
+#  exec startx &>/dev/null 
+#fi
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
@@ -57,7 +57,7 @@ HISTFILE=~/.zsh_history
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
-xset r rate 300 50
+xset r rate 200 50
 PATH=$PATH:$HOME/Others/Scripts
 
 ##################################

@@ -5,7 +5,7 @@ dunst &
 clipmenud &
 
 dte(){
-	dte="$(date +"󰸗 %d/%m/%Y    %H:%M")"
+	dte="$(date +"󰸗 %d/%m/%Y   󰥔 %H:%M")"
 	echo -e "$dte"
 }
 

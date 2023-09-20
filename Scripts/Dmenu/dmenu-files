@@ -15,8 +15,8 @@ DMEDITOR="st -e nvim"
 # You can edit this list to add/remove config files.
 declare -a options=(
 "dwm - $HOME/.config/dwm/config.def.h"
-"dwm blocks - $HOME/.config/dwm/dwmblocks/blocks.def.h"
-"dwm colors - $HOME/.config/dwm/themes/ericmurphy.h"
+"dmenu - $HOME/.config/dwm/dmenu/config.def.h"
+"st - $HOME/.config/dwm/st/config.def.h"
 "dwm autostart - $HOME/.dwm/autostart.sh"
 "dwm sxhkd - $HOME/.config/dwm-sxhkd/dwm-sxhkdrc"
 "polybar - $HOME/.config/polybar/config.ini"
