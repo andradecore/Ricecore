@@ -27,7 +27,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Firefox",  NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "discord",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "launcher", NULL,	  NULL,	      1 << 2,	    1,		 -1 },
+	{  NULL,      NULL,       "ncspot",   1 << 5,       1,           -1 },
 };
 
 /* layout(s) */

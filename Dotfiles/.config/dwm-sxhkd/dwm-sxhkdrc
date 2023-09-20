@@ -27,7 +27,7 @@ super + alt + 1
 
 # Discord
 super + alt + 2
-	Discord
+	discord-screenaudio
 
 # Ncspot
 super + alt + 6
@@ -35,9 +35,9 @@ super + alt + 6
 
 ##---------- System Applications ----------##
 
-# Bpytop
+# Htop
 ctrl + shift + Escape
-	st -e bpytop
+	st -e htop
 
 # Nemo
 super + e

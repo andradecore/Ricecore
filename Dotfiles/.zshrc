@@ -115,6 +115,7 @@ alias gp='git push -f -u origin main'
 alias updatedb='sudo updatedb'
 alias neofetch='neofetch --source ~/Others/seahorse.txt'
 #neofetch --source ~/Others/seahorse.txt
+#ufetch
 
 ##################################
 ############# COLORS #############
