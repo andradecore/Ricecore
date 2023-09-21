@@ -19,18 +19,22 @@ super + v
 super + period
 	~/Others/Scripts/Dmenu/dmenu-emojis
 
+# Dmenu Rbw
+super + z
+	~/Others/Scripts/Dmenu/dmenu-bwpass
+
 ##---------- Shortcut Applications ----------##
 
-# Firefox
+# Qutebrowser
 super + alt + 1
-	firefox
+	qutebrowser
 
 # Discord
 super + alt + 2
 	Discord
 
 # Ncspot
-super + alt + 6
+super + alt + 4
 	st -e ncspot
 
 ##---------- System Applications ----------##
@@ -39,9 +43,9 @@ super + alt + 6
 ctrl + shift + Escape
 	st -e htop
 
-# Nemo
+# Ranger
 super + e
-	nemo
+	st -e ranger
 
 # Pavucontrol
 super + shift + v

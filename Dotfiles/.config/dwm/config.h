@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-
 #include "/home/andrade/.cache/wal/colors-wal-dwm.h"
 
 /* appearance */
@@ -17,7 +16,7 @@ static const char *fonts[]          = {"JetBrains Mono Nerd Font:style=Medium:si
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:style=Medium:size=9";
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6" };
+static const char *tags[] = { " 󰼏 ", " 󰼐 ", " 󰼑 ", " 󰼒 " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -27,7 +26,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Firefox",  NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "discord",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{  NULL,      NULL,       "ncspot",   1 << 5,       1,           -1 },
+	{ "ranger",   NULL,       NULL,       0,            1,           -1 },
+	{  NULL,      NULL,       "ncspot",   1 << 3,       1,           -1 },
 };
 
 /* layout(s) */
@@ -38,9 +38,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ " ",      tile },    /* first entry is default */
-	{ " ",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "  ",      tile },    /* first entry is default */
+	{ "  ",      NULL },    /* no layout function means floating behavior */
+	{ " [M]",      monocle },
 };
 
 /* key definitions */

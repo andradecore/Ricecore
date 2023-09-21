@@ -1,6 +1,6 @@
-#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
-#  exec startx &>/dev/null 
-#fi
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
+  exec startx &>/dev/null 
+fi
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
