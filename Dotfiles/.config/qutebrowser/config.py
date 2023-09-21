@@ -25,5 +25,8 @@ config.set("auto_save.session", True)
 # Auto play videos
 config.set("content.autoplay", False)
 
+# Ad Block
+config.set("content.blocking.enabled", True)
+
 # Keybings
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
