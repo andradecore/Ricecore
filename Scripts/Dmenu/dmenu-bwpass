@@ -1,6 +1,6 @@
 #!/bin/bash
 
-selected_login=$(rbw ls | dmenu -i -l 8)
+selected_login=$(rbw ls | dmenu -i)
 
 if [ -n "$selected_login" ]; then
     rbw get "$selected_login" | xsel -b
