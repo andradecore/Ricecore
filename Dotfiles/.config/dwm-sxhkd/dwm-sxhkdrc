@@ -33,9 +33,17 @@ super + alt + 1
 super + alt + 2
 	Discord
 
+# Minecraft
+super + alt + 3
+	minecraft-launcher
+
 # Ncspot
 super + alt + 4
 	st -e ncspot
+
+# Steam
+super + alt + 5
+	steam
 
 ##---------- System Applications ----------##
 
@@ -43,9 +51,9 @@ super + alt + 4
 ctrl + shift + Escape
 	st -e htop
 
-# Ranger
+# Nnn
 super + e
-	st -e ranger
+        st -e nnn
 
 # Pavucontrol
 super + shift + v
@@ -59,11 +67,11 @@ Shift_L + ctrl
 
 # Take a screenshot
 @Print
-	scrot ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png -e 'xclip -selection clipboard -target image/png -i $f'
+	scrot ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png #-e 'xclip -selection clipboard -target image/png -i $f'
 
 # Take a screenshot of area
 super + shift + s
-	scrot -s --line mode=edge ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png -e 'xclip -selection clipboard -target image/png -i $f'
+	scrot -s --line mode=edge ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png #-e 'xclip -selection clipboard -target image/png -i $f'
 
 ##---------- Sxhkd Keys ----------##
 

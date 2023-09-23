@@ -16,7 +16,7 @@ static const char *fonts[]          = {"JetBrains Mono Nerd Font:style=Medium:si
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:style=Medium:size=9";
 
 /* tagging */
-static const char *tags[] = { " 󰼏 ", " 󰼐 ", " 󰼑 ", " 󰼒 " };
+static const char *tags[] = { " 󰼏 ", " 󰼐 ", " 󰼑 ", " 󰼒 ", "󰼓 ", "󰼔 ", "󰼕 ", "󰼖 ", "󰼗 " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -28,6 +28,7 @@ static const Rule rules[] = {
 	{ "discord",  NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "ranger",   NULL,       NULL,       0,            1,           -1 },
 	{  NULL,      NULL,       "ncspot",   1 << 3,       1,           -1 },
+	{ "steam",    NULL,       NULL,       1 >> 4,       0.           -1 },
 };
 
 /* layout(s) */
@@ -56,13 +57,40 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-p", " Run  ", NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *nnncmd[]   = { "st", "-e", "nnn" };
+static const char *htcmd[] = { "st", "-e", "htop" };
+static const char *pavucmd[] = { "pavucontrol", NULL };
+static const char *browcmd[] = { "qutebrowser", NULL };
+static const char *disccmd[] = { "Discord", NULL };
+static const char *minecmd[] = { "minecraft-launcher", NULL };
+static const char *spotcmd[] = { "st", "-e", "ncspot" };
+static const char *clipcmd[] = { "clipmenu", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-      /*{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },*/
+/* Dmenu */
+        { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
+	{ MODKEY,			XK_c,      spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-menus") },
+	{ MODKEY,			XK_x,	   spawn,          SHCMD("~/Others/Scritps/Dmenu/dmenu-power-menu") },
+	{ MODKEY,			XK_v,	   spawn,          {.v = clipcmd } },
+	{ MODKEY,                       XK_period, spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-emojis") },
+	{ MODKEY,			XK_z,      spawn,	   SHCMD("~/Others/Scripts/Dmenu/dmenu-bwpass") },
+/* System Applications */
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,			XK_e,      spawn,	   {.v = nnncmd } },
+	{ ControlMask|ShiftMask,        XK_Escape, spawn,          {.v = htcmd } },
+	{ MODKEY,			XK_e,      spawn,	   {.v = nnncmd } },
+	{ MODKEY|ShiftMask,		XK_v,	   spawn,	   {.v = pavucmd } },
+/* Shortcut Applications */
+	{ MODKEY|Mod1Mask,		XK_1,	   spawn,	   {.v = browcmd } },
+	{ MODKEY|Mod1Mask,		XK_2,	   spawn,	   {.v = disccmd } },
+	{ MODKEY|Mod1Mask,		XK_3,      spawn,          {.v = minecmd } },
+	{ MODKEY|Mod1Mask,		XK_4,      spawn,	   {.v = spotcmd } },
+/* System Keys */
+	{ 0,				XK_Print,  spawn,          SHCMD("scrot ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png") },
+	{ MODKEY|ShiftMask,		XK_s,	   spawn,	   SHCMD("scrot -s --line mode=edge ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

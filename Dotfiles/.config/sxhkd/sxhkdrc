@@ -54,9 +54,9 @@ super + Return
 ctrl + shift + Escape
 	alacritty -e bpytop
 
-# Nemo
+# NNN
 super + e
-	nemo
+	st -e nnn
 
 # Pavucontrol
 super + shift + v

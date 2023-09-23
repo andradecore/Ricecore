@@ -17,6 +17,12 @@ source ~/.cache/wal/colors-tty.sh
 # Import the colors.
 . "${HOME}/.cache/wal/colors.sh"
 
+# NNN
+#export NNN_PLUG='i:imgview'
+export NNN_PLUG='i:imgview'
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
+
 # Create the alias.
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 
