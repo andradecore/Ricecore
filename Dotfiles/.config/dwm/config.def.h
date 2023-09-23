@@ -26,7 +26,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "qutebrowser", NULL,    NULL,       1 << 0,       0,           -1 },
 	{ "discord",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "ranger",   NULL,       NULL,       0,            1,           -1 },
+	{  "nnn",     NULL,       NULL,       0,            1,           -1 },
 	{  NULL,      NULL,       "ncspot",   1 << 3,       1,           -1 },
 	{ "steam",    NULL,       NULL,       1 >> 4,       0.           -1 },
 };
@@ -73,7 +73,7 @@ static const Key keys[] = {
 /* Dmenu */
         { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,			XK_c,      spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-menus") },
-	{ MODKEY,			XK_x,	   spawn,          SHCMD("~/Others/Scritps/Dmenu/dmenu-power-menu") },
+	{ MODKEY,			XK_x,	   spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-power-menu") },
 	{ MODKEY,			XK_v,	   spawn,          {.v = clipcmd } },
 	{ MODKEY,                       XK_period, spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-emojis") },
 	{ MODKEY,			XK_z,      spawn,	   SHCMD("~/Others/Scripts/Dmenu/dmenu-bwpass") },
@@ -81,7 +81,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_e,      spawn,	   {.v = nnncmd } },
 	{ ControlMask|ShiftMask,        XK_Escape, spawn,          {.v = htcmd } },
-	{ MODKEY,			XK_e,      spawn,	   {.v = nnncmd } },
 	{ MODKEY|ShiftMask,		XK_v,	   spawn,	   {.v = pavucmd } },
 /* Shortcut Applications */
 	{ MODKEY|Mod1Mask,		XK_1,	   spawn,	   {.v = browcmd } },
