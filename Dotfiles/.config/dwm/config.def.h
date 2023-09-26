@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	{  "nnn",     NULL,       NULL,       0,            1,           -1 }, 
 	{  NULL,      NULL,       "ncspot",   1 << 3,       1,           -1 },
 	{ "steam",    NULL,       NULL,       1 >> 4,       0.           -1 },
+	{  NULL,      NULL,       "pulsemixer", 0, 	    1,           -1 },
 };
 
 /* layout(s) */
@@ -61,7 +62,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-i", "-p", " Run  ", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *nnncmd[]   = { "st", "-e", "nnn" };
 static const char *htcmd[] = { "st", "-e", "htop" };
-static const char *pavucmd[] = { "pavucontrol", NULL };
+static const char *pavucmd[] = { "st", "-e", "pulsemixer" };
 static const char *browcmd[] = { "qutebrowser", NULL };
 static const char *disccmd[] = { "Discord", NULL };
 static const char *minecmd[] = { "minecraft-launcher", NULL };

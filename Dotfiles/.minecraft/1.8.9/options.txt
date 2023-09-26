@@ -14,7 +14,7 @@ difficulty:1
 fancyGraphics:true
 ao:2
 renderClouds:false
-resourcePacks:["§l§dRam 32x [ eunsia ]"]
+resourcePacks:["§b§lSharkness"]
 incompatibleResourcePacks:[]
 lastServer:
 lang:en_us
@@ -91,9 +91,9 @@ key_key.hotbar.7:33
 key_key.hotbar.8:45
 key_key.hotbar.9:44
 key_of.key.zoom:46
-key_Open Friends Gui:35
-key_Open Cosmetic Studio:48
-key_keybind.name.SCREENSHOT_MANAGER:23
+key_Open Friends Gui:0
+key_Open Cosmetic Studio:0
+key_keybind.name.SCREENSHOT_MANAGER:0
 key_Cosmetic Visibility Toggle:0
 key_Chat Peek:0
 key_Invite Friends:0
@@ -108,7 +108,7 @@ key_keybind.name.EMOTE_SLOT_7:0
 key_keybind.name.EMOTE_SLOT_8:0
 key_Toggle Perspective:56
 key_Open TC GUI:25
-soundCategory_master:0.39403972
+soundCategory_master:0.40397352
 soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0

@@ -18,10 +18,11 @@ source ~/.cache/wal/colors-tty.sh
 . "${HOME}/.cache/wal/colors.sh"
 
 # NNN
-#export NNN_PLUG='i:imgview'
-export NNN_PLUG='i:imgview'
+export NNN_PLUG='i:imgview;p:preview-tui'
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
+export NNN_TERMINAL="st"
+export NNN_PAGER="ueberzug"
 
 # Create the alias.
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
@@ -121,7 +122,7 @@ alias gp='git push -f -u origin main'
 alias updatedb='sudo updatedb'
 alias neofetch='neofetch --source ~/Others/seahorse.txt'
 #neofetch --source ~/Others/seahorse.txt
-#ufetch
+ufetch
 
 ##################################
 ############# COLORS #############
