@@ -1,7 +1,7 @@
 invertYMouse:false
 mouseSensitivity:0.35211268
 fov:0.0
-gamma:10000.0
+gamma:100.0
 saturation:0.0
 renderDistance:12
 guiScale:0
