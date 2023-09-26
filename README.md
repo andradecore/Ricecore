@@ -17,7 +17,7 @@
 12 - Criar usuario e adicionar ao grupo wheel
 13 - Instalar repositorios extras
 14 - Trocar para os mirros de Chicago
-15 - Instalar os pacotes xorg-server xinit xinput xsetroot xsel xf86-input-evdev
+15 - Instalar os pacotes xorg-server xinit xinput xsetroot xsel xf86-input-evdev xauth
 16 - Apos xorg, instalar o driver da nvidia
 17 - Instalar nerd fonts e dependecias do dwm (ja que minha compilacao do dwm usa ela, entao e necessaria)
 18 - Instalar o git
