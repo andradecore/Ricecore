@@ -26,9 +26,9 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "qutebrowser", NULL,    NULL,       1 << 0,       0,           -1 },
 	{ "discord",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{  "nnn",     NULL,       NULL,       0,            1,           -1 }, 
+	{ "nnn",      NULL,       NULL,       0,            1,           -1 },
+	{ "steam",    NULL,	  NULL,	      1 << 4,       0,           -1 }, 
 	{  NULL,      NULL,       "ncspot",   1 << 3,       1,           -1 },
-	{ "steam",    NULL,       NULL,       1 >> 4,       0.           -1 },
 	{  NULL,      NULL,       "pulsemixer", 0, 	    1,           -1 },
 };
 

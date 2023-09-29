@@ -1,7 +1,7 @@
 #!/bin/bash
 #sxhkd -c $HOME/.config/dwm-sxhkd/dwm-sxhkdrc &
 dunst &
-#xwallpaper --zoom ~/Pictures/Wallpapers/Pixel-Night.jpg &
+#xwallpaper --zoom ~/Pictures/Wallpapers/MacOS.jpg &
 clipmenud &
 
 dte(){

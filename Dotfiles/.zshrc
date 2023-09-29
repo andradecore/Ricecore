@@ -1,6 +1,6 @@
-#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
-#  exec startx &>/dev/null 
-#fi
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
+  exec startx &>/dev/null 
+fi
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
@@ -18,11 +18,11 @@ source ~/.cache/wal/colors-tty.sh
 . "${HOME}/.cache/wal/colors.sh"
 
 # NNN
-export NNN_PLUG='i:imgview;p:preview-tui'
+export NNN_PLUG='i:imgview'
 export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
+#export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
+export NNN_USE_EDITOR=1
 export NNN_TERMINAL="st"
-export NNN_PAGER="ueberzug"
 
 # Create the alias.
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'

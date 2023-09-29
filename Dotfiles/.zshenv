@@ -3,8 +3,8 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
-export VIDEO="mpv"
-export IMAGE="firefox"
+export VIDEO="qutebrowser"
+export IMAGE="sxiv"
 export WM="dwm"
 
 # ~/ Clean-up:
