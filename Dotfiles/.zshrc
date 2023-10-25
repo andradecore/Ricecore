@@ -18,11 +18,13 @@ source ~/.cache/wal/colors-tty.sh
 . "${HOME}/.cache/wal/colors.sh"
 
 # NNN
-export NNN_PLUG='i:imgview'
+export NNN_PLUG='p:preview-tui'
 export NNN_FIFO="/tmp/nnn.fifo"
-#export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
+export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
 export NNN_USE_EDITOR=1
 export NNN_TERMINAL="st"
+export PAGER="less -R"
+source $HOME/.local/zsh/quitcd.zsh
 
 # Create the alias.
 alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
@@ -32,14 +34,7 @@ alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 ##################################
 export __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
 export __GL_SHADER_DISK_CACHE_SIZE=100000000000
-
-##################################
-############ CLIPMENU ############
-##################################
-export CM_SELECTIONS="clipboard"
-export CM_OUTPUT_CLIP=0
-export CM_MAX_CLIPS=10
-CM_LAUNCHER=dmenu
+export LIBVA_DRIVER_NAME=nvidia
 
 ##################################
 ############# PROMPT #############
@@ -72,7 +67,6 @@ PATH=$PATH:$HOME/Others/Scripts
 ##################################
 
 # Zsh commands
-alias vim='nvim'
 alias la='ls -a'
 alias ll='ls -l'
 alias ls='ls --color=auto'
@@ -93,25 +87,6 @@ alias xu='sudo xbps-install -Su'
 alias xi='sudo xbps-install --repository hostdir/binpkgs/nonfree'
 alias xusrc='cd ~/Others/void-packages && git pull && ./xbps-src update-sys'
 
-# PACMAN
-alias pr='sudo pacman -R'
-alias prr='sudo pacman -Rns'
-alias pro='sudo pacman -Rsn $(pacman -Qdtq)'
-alias prc='sudo pacman -Sc'
-alias pl='sudo pacman -S'
-alias ps='pacman -Ss'
-alias pq='pacman -Qeq'
-alias pu='sudo pacman -Syu'
-alias pacache='sudo du -sh /var/cache/pacman/pkg .cache/yay'
-
-# YAY
-alias yr='yay -R'
-alias yrr='yay -Rns'
-alias yl='yay -S'
-alias ys='yay -Ss'
-alias yq='yay -Qeq'
-alias yu='yay -Syu'
-
 # GIT
 alias gs='git status'
 alias ga='git add .'
@@ -120,8 +95,7 @@ alias gp='git push -f -u origin main'
 
 # Aplicativos
 alias updatedb='sudo updatedb'
-alias neofetch='neofetch --source ~/Others/seahorse.txt'
-#neofetch --source ~/Others/seahorse.txt
+alias tsm='transmission-remote'
 ufetch
 
 ##################################
@@ -136,3 +110,5 @@ export LS_COLORS
 ############ PIPEWIRE ############
 ##################################
 export PIPEWIRE_LATENCY=128/48000
+
+export WINEDLLOVERRIDES="mscoree,mshtml="

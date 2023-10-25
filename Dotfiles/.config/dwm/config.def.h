@@ -26,10 +26,12 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "qutebrowser", NULL,    NULL,       1 << 0,       0,           -1 },
 	{ "discord",  NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "nnn",      NULL,       NULL,       0,            1,           -1 },
-	{ "steam",    NULL,	  NULL,	      1 << 4,       0,           -1 }, 
+	{  NULL,      NULL,       "nnn",      0,            1,           -1 },
+	{ "steam",    NULL,	      NULL,	      1 << 2,       0,           -1 }, 
 	{  NULL,      NULL,       "ncspot",   1 << 3,       1,           -1 },
-	{  NULL,      NULL,       "pulsemixer", 0, 	    1,           -1 },
+	{  NULL,      NULL,       "pulsemixer", 0, 	        1,           -1 },
+  { "league of legends.exe", NULL, NULL, 1 << 5,      0,           -1 },
+  { "leagueclientux.exe", NULL, NULL,    1 << 5,      0,           -1 },
 };
 
 /* layout(s) */
@@ -59,8 +61,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-i", "-p", " Run  ", NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *nnncmd[]   = { "st", "-e", "nnn" };
+static const char *termcmd[] = { "st", NULL };
+static const char *nnncmd[] = { "/bin/zsh", "-l", "-c", "source ~/.zshrc; st -e nnn", NULL };
 static const char *htcmd[] = { "st", "-e", "htop" };
 static const char *pavucmd[] = { "st", "-e", "pulsemixer" };
 static const char *browcmd[] = { "qutebrowser", NULL };
@@ -72,25 +74,26 @@ static const char *clipcmd[] = { "clipmenu", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 /* Dmenu */
-        { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
-	{ MODKEY,			XK_c,      spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-menus") },
-	{ MODKEY,			XK_x,	   spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-power-menu") },
-	{ MODKEY,			XK_v,	   spawn,          {.v = clipcmd } },
+  { MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
+	{ MODKEY,			                  XK_c,      spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-menus") },
+	{ MODKEY,			                  XK_x,	     spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-power-menu") },
+	{ MODKEY,			                  XK_v,	     spawn,          {.v = clipcmd } },
 	{ MODKEY,                       XK_period, spawn,          SHCMD("~/Others/Scripts/Dmenu/dmenu-emojis") },
-	{ MODKEY,			XK_z,      spawn,	   SHCMD("~/Others/Scripts/Dmenu/dmenu-bwpass") },
+	{ MODKEY,			                  XK_z,      spawn,	         SHCMD("~/Others/Scripts/Dmenu/dmenu-bwpass") },
 /* System Applications */
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,			XK_e,      spawn,	   {.v = nnncmd } },
+	{ MODKEY,			                  XK_e,      spawn,	         {.v = nnncmd } },
 	{ ControlMask|ShiftMask,        XK_Escape, spawn,          {.v = htcmd } },
-	{ MODKEY|ShiftMask,		XK_v,	   spawn,	   {.v = pavucmd } },
+	{ MODKEY|ShiftMask,		          XK_v,	     spawn,	         {.v = pavucmd } },
+  { ControlMask,                  XK_Shift_L, spawn,          SHCMD("setxkbmap -query | grep -q 'br' && setxkbmap us || setxkbmap br,us") },
 /* Shortcut Applications */
-	{ MODKEY|Mod1Mask,		XK_1,	   spawn,	   {.v = browcmd } },
-	{ MODKEY|Mod1Mask,		XK_2,	   spawn,	   {.v = disccmd } },
-	{ MODKEY|Mod1Mask,		XK_3,      spawn,          {.v = minecmd } },
-	{ MODKEY|Mod1Mask,		XK_4,      spawn,	   {.v = spotcmd } },
+	{ MODKEY|Mod1Mask,		          XK_1,	     spawn,	         {.v = browcmd } },
+	{ MODKEY|Mod1Mask,		          XK_2,	     spawn,	         {.v = disccmd } },
+	{ MODKEY|Mod1Mask,		          XK_3,      spawn,          {.v = minecmd } },
+	{ MODKEY|Mod1Mask,		          XK_4,      spawn,	         {.v = spotcmd } },
 /* System Keys */
-	{ 0,				XK_Print,  spawn,          SHCMD("scrot ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png") },
-	{ MODKEY|ShiftMask,		XK_s,	   spawn,	   SHCMD("scrot -s --line mode=edge ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png") },
+	{ 0,				                    XK_Print,  spawn,          SHCMD("scrot ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png -e 'xclip -selection clipboard -target image/png -i $f -verbose'") },
+	{ MODKEY|ShiftMask,		          XK_s,  	   spawn,	         SHCMD("scrot -s --line mode=edge ~/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_screenshot-scrot.png -e 'xclip -selection clipboard -target image/png -i $f -verbose'") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -103,6 +106,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_w,      killclient,     {0} },
 	{ MODKEY,                       XK_n,      setlayout,      {0} },
 	{ MODKEY,                       XK_s,      togglefloating, {0} },
+  { MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },

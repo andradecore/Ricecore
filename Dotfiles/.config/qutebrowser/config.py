@@ -16,13 +16,25 @@ c.fonts.debug_console = '9pt "JetBrains Mono Nerd Font"'
 c.fonts.prompts = '9pt "JetBrains Mono Nerd Font"'
 c.fonts.statusbar = '9pt "JetBrains Mono Nerd Font"'
 
-# Set ranger to filepicker
+# Cursor
+c.qt.args = ["-cursor", "McMojave Cursors"]
+
+# Set nnn to filepicker
+
+import os
+os.environ["NNN_PLUG"] = "p:preview-tui"
+os.environ["NNN_FIFO"] = "/tmp/nnn.fifo"
+os.environ["NNN_FCOLORS"] = "AAAAE631BBBBCCCCDDDD9999"
+os.environ["NNN_USE_EDITOR"] = "1"
+os.environ["NNN_TERMINAL"] = "st"
+os.environ["PAGER"] = "less -R"
+
 config.set("fileselect.handler", "external")
 config.set("fileselect.single_file.command", ['st', '-c', 'nnn,nnn', '-e', 'nnn', '-p', '{}'])
 config.set("fileselect.multiple_files.command", ['st', '-c', 'nnn,nnn', '-e', 'nnn', '-p', '{}'])
 
 # Focus on my startpage
- #config.set('input.mode_override', 'passthrough', 'andradecore.github.io')
+#config.set('input.mode_override', 'passthrough', 'andradecore.github.io')
 
 # Set default start page and new page
 c.url.default_page = "https://andradecore.github.io"

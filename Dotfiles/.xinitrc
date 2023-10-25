@@ -52,5 +52,4 @@ nvidia-settings --load-config-only &
 pipewire &
 wal -R &
 xsetroot -cursor_name left_ptr &
-#exec dbus-run-session bspwm
 exec dbus-launch --exit-with-session dwm
