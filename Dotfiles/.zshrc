@@ -44,6 +44,7 @@ PROMPT='%F{8}$%f '
 PROMPT='%F{#66BEFF}%1~%f %F{White}%f  '
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-history-substring-search.zsh
 
 ##################################
 ############# BÁSICO #############
@@ -52,6 +53,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -U compinit
 compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
+# history substring search options
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 HISTSIZE=10000
 SAVEHIST=10000

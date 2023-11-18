@@ -47,7 +47,7 @@ config.set("auto_save.session", True)
 config.set("content.autoplay", False)
 
 # Ad Block
-config.set("content.blocking.enabled", True)
+config.set("content.blocking.enabled", False)
 
 # Keybings
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
