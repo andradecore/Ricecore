@@ -20,7 +20,7 @@ source ~/.cache/wal/colors-tty.sh
 # NNN
 export NNN_PLUG='p:preview-tui'
 export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
+#export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999"
 export NNN_USE_EDITOR=1
 export NNN_TERMINAL="st"
 export PAGER="less -R"
@@ -102,6 +102,9 @@ alias gp='git push -f -u origin main'
 alias updatedb='sudo updatedb'
 alias tsm='transmission-remote'
 ufetch
+
+# Reload theme
+alias reload='cd ~/.config/dwm && rm config.h && sudo make install && cd ~/.config/dwm/dmenu && rm config.h && sudo make install && cd ~/.config/dwm/st && rm config.h && sudo make install'
 
 ##################################
 ############# COLORS #############
