@@ -25,13 +25,11 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "qutebrowser", NULL,    NULL,       1 << 0,       0,           -1 },
+  { "firefox",  NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "discord",  NULL,       NULL,       1 << 1,       0,           -1 },
 	{  NULL,      NULL,       "nnn",      0,            1,           -1 },
 	{ "steam",    NULL,	      NULL,	      1 << 2,       0,           -1 }, 
-	{  NULL,      NULL,       "ncspot",   1 << 3,       1,           -1 },
 	{  NULL,      NULL,       "pulsemixer", 0, 	        1,           -1 },
-  { "league of legends.exe", NULL, NULL, 1 << 5,      0,           -1 },
-  { "leagueclientux.exe", NULL, NULL,    1 << 5,      0,           -1 },
 };
 
 /* layout(s) */
@@ -65,7 +63,8 @@ static const char *termcmd[] = { "st", NULL };
 static const char *nnncmd[] = { "/bin/zsh", "-l", "-c", "source ~/.zshrc; st -e nnn -C", NULL };
 static const char *htcmd[] = { "st", "-e", "htop" };
 static const char *pavucmd[] = { "st", "-e", "pulsemixer" };
-static const char *browcmd[] = { "qutebrowser", NULL };
+/* static const char *browcmd[] = { "qutebrowser", NULL }; */
+static const char *foxcmd[] = { "firefox", NULL };
 static const char *disccmd[] = { "Discord", NULL };
 static const char *minecmd[] = { "minecraft-launcher", NULL };
 static const char *spotcmd[] = { "st", "-e", "ncspot" };
@@ -87,7 +86,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		          XK_v,	     spawn,	         {.v = pavucmd } },
   { ControlMask,                  XK_Shift_L, spawn,          SHCMD("setxkbmap -query | grep -q 'br' && setxkbmap us || setxkbmap br,us") },
 /* Shortcut Applications */
-	{ MODKEY|Mod1Mask,		          XK_1,	     spawn,	         {.v = browcmd } },
+/*	{ MODKEY|Mod1Mask,		          XK_1,	     spawn,	         {.v = browcmd } }, */
+  { MODKEY|Mod1Mask,              XK_1,      spawn,          {.v = foxcmd  } },
 	{ MODKEY|Mod1Mask,		          XK_2,	     spawn,	         {.v = disccmd } },
 	{ MODKEY|Mod1Mask,		          XK_3,      spawn,          {.v = minecmd } },
 	{ MODKEY|Mod1Mask,		          XK_4,      spawn,	         {.v = spotcmd } },
