@@ -1,0 +1,8 @@
+#! /bin/sh
+
+chosen=$(printf " Config Files" | dmenu -i -p '󰍜 ' )
+
+case "$chosen" in
+  " Config Files") $HOME/Others/Scripts/Dmenu/dmenu-files ;;
+  *) exit 1 ;;
+esac

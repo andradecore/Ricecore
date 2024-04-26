@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+#
+# Script name: dmconf
+# Description: Choose from a list of configuration files to edit.
+# Dependencies: dmenu
+# GitLab: https://www.gitlab.com/dwt1/dmscripts
+# Contributors: Derek Taylor
+
+# Defining the text editor to use.
+# DMENUEDITOR="vim"
+# DMENUEDITOR="leafpad"
+DMEDITOR="st -e nvim"
+
+# An array of options to choose.
+# You can edit this list to add/remove config files.
+declare -a options=(
+"dwm - $HOME/.config/dwm/config.def.h"
+"dmenu - $HOME/.config/dwm/dmenu/config.def.h"
+"st - $HOME/.config/dwm/st/config.def.h"
+"dwm autostart - $HOME/.dwm/autostart.sh"
+"dwm sxhkd - $HOME/.config/dwm-sxhkd/dwm-sxhkdrc"
+"polybar - $HOME/.config/polybar/config.ini"
+"polybar modules - $HOME/.config/polybar/modules.ini"
+"polybar colors - $HOME/.config/polybar/colors.ini"
+"bspwm - $HOME/.config/bspwm/bspwmrc"
+"sxhkd - $HOME/.config/sxhkd/sxhkdrc"
+"bash - $HOME/.bashrc"
+"zsh - $HOME/.zshrc"
+"picom - $HOME/.config/picom/picom.sample.conf"
+"alacritty - $HOME/.config/alacritty/alacritty.yml"
+"nvim - $HOME/.config/nvim/vim-plug/plugins.vim"
+"ranger - $HOME/.config/ranger/rc.conf"
+"dunst - $HOME/.config/dunst/dunstrc"
+"rofi - $HOME/.config/rofi/config.rasi"
+"firefoxcss - $HOME/.mozilla/firefox/emgsohok.default-default/chrome/userChrome.css"
+)
+
+# Piping the above array into dmenu.
+# We use "printf '%s\n'" to format the array one item to a line.
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -p ' ')
+
+# What to do when/if we choose 'quit'.
+if [[ "$choice" == "quit" ]]; then
+    echo "Program terminated." && exit 1
+
+# What to do when/if we choose a file to edit.
+elif [ "$choice" ]; then
+	cfg=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+	$DMEDITOR "$cfg"
+
+# What to do if we just escape without choosing anything.
+else
+    echo "Program terminated." && exit 1
+fi
